@@ -6,14 +6,12 @@
 }
 
 body {
-  font-family: "Times New Roman", serif;
-  background: white;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #74b9ff, #0dbc79);
   min-height: 100vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  color: black;
-  padding-top: 50px;
 }
 
 .app {
@@ -21,109 +19,103 @@ body {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  text-align: center;
 }
 
-/* Welcome Screen Styles - Basic and minimal */
+/* Welcome Screen Styles */
 .welcome-screen {
   background: white;
+  border-radius: 20px;
   padding: 40px;
   text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .welcome-screen h1 {
-  color: black;
-  margin-bottom: 30px;
+  color: #2d3436;
+  margin-bottom: 20px;
   font-size: 2.5rem;
-  font-weight: bold;
-  font-family: "Times New Roman", serif;
 }
 
-.welcome-screen p {
-  color: black;
+.instructions {
+  margin: 30px 0;
+  text-align: left;
+}
+
+.instructions h2 {
+  color: #2d3436;
   margin-bottom: 15px;
-  font-size: 1.1rem;
-  line-height: 1.4;
-}
-
-.play-button {
-  background: white;
-  color: black;
-  border: 2px solid black;
-  padding: 8px 20px;
-  font-size: 1rem;
-  font-family: "Times New Roman", serif;
-  cursor: pointer;
-  margin: 20px 0 40px 0;
-  transition: background-color 0.2s;
-}
-
-.play-button:hover {
-  background: #f0f0f0;
-}
-
-.high-scores {
-  margin-top: 40px;
-}
-
-.high-scores h2 {
-  color: black;
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  font-weight: bold;
-  font-family: "Times New Roman", serif;
-}
-
-.high-scores p {
-  margin-bottom: 5px;
-}
-
-/* Game Board Styles - Keep minimal */
-.game-board {
-  background: white;
-  padding: 30px;
   text-align: center;
 }
 
-.game-title {
-  color: black;
-  margin-bottom: 20px;
-  font-size: 2rem;
-  font-weight: bold;
-  font-family: "Times New Roman", serif;
+.instructions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.instructions li {
+  padding: 8px 0;
+  color: #636e72;
+  font-size: 1.1rem;
+}
+
+.instructions li::before {
+  content: "🎯 ";
+  margin-right: 8px;
+}
+
+.play-button {
+  background: linear-gradient(45deg, #e84393, #fd79a8);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.3rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 20px;
+}
+
+.play-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(232, 67, 147, 0.4);
+}
+
+/* Game Board Styles */
+.game-board {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .game-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
-  gap: 20px;
+  padding: 0 10px;
 }
 
 .score-display {
-  font-size: 1rem;
-  font-weight: normal;
-  color: black;
-  font-family: "Times New Roman", serif;
-  border: 2px solid black;
-  padding: 8px 16px;
-  background: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2d3436;
 }
 
 .restart-button {
-  background: white;
-  color: black;
-  border: 2px solid black;
-  padding: 8px 16px;
+  background: linear-gradient(45deg, #00b894, #00cec9);
+  color: white;
+  border: none;
+  padding: 10px 20px;
   font-size: 1rem;
-  font-family: "Times New Roman", serif;
+  border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .restart-button:hover {
-  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 184, 148, 0.4);
 }
 
 /* Holes Grid */
@@ -133,7 +125,6 @@ body {
   grid-template-rows: repeat(3, 1fr);
   gap: 15px;
   margin-bottom: 20px;
-  justify-items: center;
 }
 
 /* Individual hole styles */
@@ -143,6 +134,7 @@ body {
   height: 120px;
   position: relative;
   transition: transform 0.1s;
+  border-radius: 50%;
 }
 
 .hole:hover {
@@ -150,14 +142,16 @@ body {
 }
 
 /* Mole styles - when a hole has a mole */
-.hole.mole {
-  background: url("/mole.png") no-repeat center/contain,
-    url("/hole.png") no-repeat center/contain;
+.mole {
+  background-image: url("/mole.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   cursor: pointer !important;
   animation: popUp 0.3s ease-out;
 }
 
-.hole.mole:hover {
+.mole:hover {
   transform: scale(1.1);
 }
 
@@ -176,10 +170,9 @@ body {
 
 .game-instructions {
   text-align: center;
-  color: black;
+  color: #636e72;
   font-size: 1.1rem;
   margin-top: 20px;
-  font-family: "Times New Roman", serif;
 }
 
 /* Responsive design */

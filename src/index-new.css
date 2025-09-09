@@ -10,10 +10,9 @@ body {
   background: white;
   min-height: 100vh;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   color: black;
-  padding-top: 50px;
 }
 
 .app {
@@ -85,30 +84,19 @@ body {
   text-align: center;
 }
 
-.game-title {
-  color: black;
-  margin-bottom: 20px;
-  font-size: 2rem;
-  font-weight: bold;
-  font-family: "Times New Roman", serif;
-}
-
 .game-header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
-  gap: 20px;
+  padding: 0 10px;
 }
 
 .score-display {
-  font-size: 1rem;
-  font-weight: normal;
+  font-size: 1.5rem;
+  font-weight: bold;
   color: black;
   font-family: "Times New Roman", serif;
-  border: 2px solid black;
-  padding: 8px 16px;
-  background: white;
 }
 
 .restart-button {
@@ -143,6 +131,7 @@ body {
   height: 120px;
   position: relative;
   transition: transform 0.1s;
+  border-radius: 50%;
 }
 
 .hole:hover {
@@ -150,14 +139,16 @@ body {
 }
 
 /* Mole styles - when a hole has a mole */
-.hole.mole {
-  background: url("/mole.png") no-repeat center/contain,
-    url("/hole.png") no-repeat center/contain;
+.mole {
+  background-image: url("/mole.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   cursor: pointer !important;
   animation: popUp 0.3s ease-out;
 }
 
-.hole.mole:hover {
+.mole:hover {
   transform: scale(1.1);
 }
 
