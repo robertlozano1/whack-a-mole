@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useRef, useEffect } from "react";
 
-// Create the context for our game state
+// Create the context for game state
 const GameContext = createContext();
 
 // Custom hook to use the game context easily in components
