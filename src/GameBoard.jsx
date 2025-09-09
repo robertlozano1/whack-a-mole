@@ -11,10 +11,7 @@ function Hole({ holeIndex }) {
   const handleClick = () => {
     // Only do something if this hole has the mole
     if (hasMole) {
-      console.log(`Clicked hole ${holeIndex} - has mole!`);
       whackMole(); // Call the whackMole function from context
-    } else {
-      console.log(`Clicked hole ${holeIndex} - no mole here`);
     }
   };
 
@@ -31,19 +28,19 @@ function Hole({ holeIndex }) {
 
 // Main game board component - shows the playing area
 export default function GameBoard() {
-  const { score, restartGame } = useGame();
+  const { score, restartGame, timeLeft } = useGame();
 
   // Create an array of 9 holes (0-8) for our 3x3 grid
   const holes = Array.from({ length: 9 }, (_, index) => index);
-
   return (
     <div className="game-board">
       {/* Title */}
       <h1 className="game-title">Whack a Mole</h1>
 
-      {/* Score and restart section */}
+      {/* Score, Timer, and restart section */}
       <div className="game-header">
         <div className="score-display">Score: {score}</div>
+        <div className="timer-display">Time: {timeLeft}</div>
         <button className="restart-button" onClick={restartGame}>
           Restart
         </button>

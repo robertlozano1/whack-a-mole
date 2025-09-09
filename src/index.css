@@ -13,7 +13,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   color: black;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .app {
@@ -27,13 +27,13 @@ body {
 /* Welcome Screen Styles - Basic and minimal */
 .welcome-screen {
   background: white;
-  padding: 40px;
+  padding: 20px;
   text-align: center;
 }
 
 .welcome-screen h1 {
   color: black;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   font-size: 2.5rem;
   font-weight: bold;
   font-family: "Times New Roman", serif;
@@ -41,20 +41,20 @@ body {
 
 .welcome-screen p {
   color: black;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   font-size: 1.1rem;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 .play-button {
   background: white;
   color: black;
   border: 2px solid black;
-  padding: 8px 20px;
+  padding: 8px 50px;
   font-size: 1rem;
   font-family: "Times New Roman", serif;
   cursor: pointer;
-  margin: 20px 0 40px 0;
+  margin: 15px 0 25px 0;
   transition: background-color 0.2s;
 }
 
@@ -63,19 +63,19 @@ body {
 }
 
 .high-scores {
-  margin-top: 40px;
+  margin-top: 25px;
 }
 
 .high-scores h2 {
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-size: 1.5rem;
   font-weight: bold;
   font-family: "Times New Roman", serif;
 }
 
 .high-scores p {
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 /* Game Board Styles - Keep minimal */
@@ -90,7 +90,18 @@ body {
   margin-bottom: 20px;
   font-size: 2rem;
   font-weight: bold;
+  font-family: "Arial", serif;
+}
+
+.timer-display {
+  font-size: 1rem;
+  font-weight: normal;
+  color: black;
   font-family: "Times New Roman", serif;
+  border: 2px solid black;
+  padding: 5px 60px;
+  background: white;
+  white-space: nowrap;
 }
 
 .game-header {
@@ -107,19 +118,21 @@ body {
   color: black;
   font-family: "Times New Roman", serif;
   border: 2px solid black;
-  padding: 8px 16px;
+  padding: 5px 60px;
   background: white;
+  white-space: nowrap;
 }
 
 .restart-button {
   background: white;
   color: black;
   border: 2px solid black;
-  padding: 8px 16px;
+  padding: 5px 60px;
   font-size: 1rem;
   font-family: "Times New Roman", serif;
   cursor: pointer;
   transition: background-color 0.2s;
+  white-space: nowrap;
 }
 
 .restart-button:hover {
@@ -180,6 +193,19 @@ body {
   font-size: 1.1rem;
   margin-top: 20px;
   font-family: "Times New Roman", serif;
+}
+
+.game-over {
+  text-align: center;
+  color: #ff6b6b;
+  font-size: 1.3rem;
+  font-weight: bold;
+  font-family: "Times New Roman", serif;
+  margin-top: 20px;
+  padding: 15px;
+  border: 2px solid #ff6b6b;
+  background: #ffe0e0;
+  border-radius: 8px;
 }
 
 /* Responsive design */
